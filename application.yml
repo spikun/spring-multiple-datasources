@@ -1,0 +1,20 @@
+liquibase-changelogs:
+  primary:
+    liquibase:
+      change-log: classpath:db/changelog/primary/master.xml
+      contexts: local
+  secondary:
+    liquibase:
+      change-log: classpath:db/changelog/secondary/master.xml
+      contexts: local
+
+spring:
+  datasource:
+    primary:
+      platform: h2
+      url: jdbc:h2:mem:primary;
+      username: sa
+    secondary:
+      platform: h2
+      url: jdbc:h2:mem:secondary;
+      username: sa
